@@ -1,3 +1,5 @@
+# Integrazione di Geometrie Reali e Fattori di Rischio Dinamici in Grafi di Trasporto Pubblico: Un’Analisi Comparativa
+
 # 🧐 Contesto e Problema
 I sistemi di routing standard basati su GTFS (General Transit Feed Specification) modellano la rete di trasporto come una sequenza logica di fermate. Questo approccio presenta due limitazioni critiche per l'analisi urbana avanzata:
 - Cecità Topologica: Il percorso tra due fermate viene spesso approssimato       come una linea retta, ignorando la reale conformazione della strada.
