@@ -23,7 +23,8 @@ Il progetto esplora e confronta due approcci implementativi distinti per la mode
   - Contro: Esplosione della cardinalità del grafo (milioni di nodi), routing computazionalmente oneroso.
 - 2 Approccio "Semplificato/Edge-Based" (Ottimizzato per Routing)Descrizione: La complessità geometrica viene gestita nella fase di pre-elaborazione (ETL in Python). Un algoritmo di Map Matching calcola la geometria esatta e il rischio medio del segmento tra due fermate e salva queste informazioni come proprietà dell'arco logico (PRECEDES).
   - Pro: Grafo estremamente leggero, routing rapidissimo (millisecondi) su hardware standard, mantenimento dell'informazione geometrica completa sugli archi.
-Nota: Questo è l'approccio raccomandato per il calcolo delle matrici OD tra quartieri.
+
++ Questo è l'approccio raccomandato per il calcolo delle matrici OD tra quartieri.
 # 💻 Stack Tecnologico
 - Core Database: Neo4j Graph Database (Versione 5.x+)
 - Neo4j Plugins (Obbligatori):APOC (Awesome Procedures on Cypher) -- Per utility e caricamento dati avanzato.GDS (Graph Data Science Library) -- Per l'esecuzione dell'algoritmo di Dijkstra e le proiezioni in memoria.
