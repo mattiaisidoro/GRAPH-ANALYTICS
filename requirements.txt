@@ -1,0 +1,25 @@
+# --- Database ---
+# Driver ufficiale per Neo4j (compatibile con Neo4j 5.x)
+neo4j>=5.18.0,<6.0.0
+
+# --- Analisi Dati ---
+# Manipolazione di DataFrames tabellari
+pandas>=2.2.0
+# Calcolo numerico (dipendenza di pandas e rasterio)
+numpy>=1.26.0
+
+# --- Geospaziale (GIS) ---
+# Estensione di pandas per dati geografici (GeoJSON, Shapes)
+geopandas>=0.14.3
+# Motore geometrico (usato da geopandas per creare LineString, Point, ecc.)
+shapely>=2.0.3
+# Lettura e campionamento di file Raster (GeoTIFF)
+rasterio>=1.3.9
+# Proiezioni cartografiche (utile per gestire i CRS)
+pyproj>=3.6.1
+
+# --- Ambiente di Sviluppo (Opzionale) ---
+# Per eseguire i notebooks
+jupyterlab>=4.1.0
+# Per visualizzazioni grafiche veloci nei notebook (opzionale ma utile)
+matplotlib>=3.8.0
