@@ -29,7 +29,7 @@ Il progetto esplora e confronta due approcci implementativi distinti per la mode
 - Core Database: Neo4j Graph Database (Versione 5.x+)
 - Neo4j Plugins (Obbligatori):APOC (Awesome Procedures on Cypher) -- Per utility e caricamento dati avanzato.GDS (Graph Data Science Library) -- Per l'esecuzione dell'algoritmo di Dijkstra e le proiezioni in memoria.
 - Linguaggio di Scripting: Python 3.8+
-- Librerie Python Chiave:neo4j (Driver ufficiale Bolt)pandas & geopandas (Manipolazione dati tabellari e geospaziali)rasterio (Campionamento dati raster/immagini)shapely (Operazioni geometriche, creazione WKT)
+- Librerie Python Chiave:neo4j (Driver ufficiale Bolt), pandas & geopandas (Manipolazione dati tabellari e geospaziali), rasterio (Campionamento dati raster/immagini), shapely (Operazioni geometriche, creazione WKT)
 
 # 🛠️ Installazione e Requisiti
 + 1 Configurazione Neo4j
