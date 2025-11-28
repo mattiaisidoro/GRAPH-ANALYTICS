@@ -18,10 +18,10 @@ L'algoritmo di routing utilizza una funzione di costo, che crea un sorta di rita
   
 # ⚙️ Metodologia e Architettura
 Il progetto esplora e confronta due approcci implementativi distinti per la modellazione del grafo:
-- 1 Approccio "Full Geometry" (Modellazione Fisica)Descrizione: Ogni singola coordinata GPS del tracciato stradale viene istanziata nel grafo come un nodo fisico (ShapePoint). Il rischio viene mappato su ogni micro-segmento stradale.
+- 1 Approccio "Full Geometry" (Modellazione Fisica): Ogni singola coordinata GPS del tracciato stradale viene istanziata nel grafo come un nodo fisico (ShapePoint). Il rischio viene mappato su ogni micro-segmento stradale.
   - Pro: Massima precisione spaziale per query granulari (es. "incidenti in questo specifico incrocio").
   - Contro: Esplosione della cardinalità del grafo (milioni di nodi), routing computazionalmente oneroso.
-- 2 Approccio "Semplificato/Edge-Based" (Ottimizzato per Routing)Descrizione: La complessità geometrica viene gestita nella fase di pre-elaborazione (ETL in Python). Un algoritmo di Map Matching calcola la geometria esatta e il rischio medio del segmento tra due fermate e salva queste informazioni come proprietà dell'arco logico (PRECEDES).
+- 2 Approccio "Semplificato/Edge-Based" (Ottimizzato per Routing): La complessità geometrica viene gestita nella fase di pre-elaborazione (ETL in Python). Un algoritmo di Map Matching calcola la geometria esatta e il rischio medio del segmento tra due fermate e salva queste informazioni come proprietà dell'arco logico (PRECEDES).
   - Pro: Grafo estremamente leggero, routing rapidissimo (millisecondi) su hardware standard, mantenimento dell'informazione geometrica completa sugli archi.
 
 + Questo è l'approccio raccomandato per il calcolo delle matrici OD tra quartieri.
