@@ -33,20 +33,20 @@ Nota: Questo è l'approccio raccomandato per il calcolo delle matrici OD tra qua
 
 + 2 Configurazione Ambiente Python
   - Clona il repository:
-    '''Bash
+    ```Bash
     git clone https://github.com/TUO-USERNAME/modena-safety-routing.git
-    cd modena-safety-routing'''
+    cd modena-safety-routing```
    
   - (Opzionale ma consigliato) Crea un virtual environment:
-    '''Bash
+    ```bash
     
     python -m venv venv
-    source venv/bin/activate  # Su Windows: venv\Scripts\activate'''
+    source venv/bin/activate  # Su Windows: venv\Scripts\activate```
     
   - Installa le dipendenze:
-    '''Bash
+    ```Bash
     
-    pip install -r requirements.txt'''
+    pip install -r requirements.txt```
     
 + 3 Setup dei Dati:
 Assicurati di avere i file dati grezzi (GTFS, TIF, GeoJSON).
