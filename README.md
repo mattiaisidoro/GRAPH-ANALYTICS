@@ -26,30 +26,31 @@ Nota: Questo è l'approccio raccomandato per il calcolo delle matrici OD tra qua
 - Librerie Python Chiave:neo4j (Driver ufficiale Bolt)pandas & geopandas (Manipolazione dati tabellari e geospaziali)rasterio (Campionamento dati raster/immagini)shapely (Operazioni geometriche, creazione WKT)
 
 # 🛠️ Installazione e Requisiti
-+ 1. Configurazione Neo4j
-- Scarica e installa Neo4j Desktop.
++ 1 Configurazione Neo4j
+  - Scarica e installa Neo4j Desktop.
 
-- Crea un nuovo DBMS (versione 5.x raccomandata).Dal menu del database, vai su "Plugins" e installa APOC e Graph Data Science (GDS). 
+  - Crea un nuovo DBMS (versione 5.x raccomandata).Dal menu del database, vai   su "Plugins" e installa APOC e Graph Data Science (GDS). 
 
-+ 2. Configurazione Ambiente Python
-Clona il repository:
-
-Bash
-
-git clone https://github.com/TUO-USERNAME/modena-safety-routing.git
-cd modena-safety-routing
-(Opzionale ma consigliato) Crea un virtual environment:
-
-Bash
-
-python -m venv venv
-source venv/bin/activate  # Su Windows: venv\Scripts\activate
-Installa le dipendenze:
-
-Bash
-
-pip install -r requirements.txt
-3. Setup dei Dati
++ 2 Configurazione Ambiente Python
+  - Clona il repository:
+    '''
+    Bash
+    git clone https://github.com/TUO-USERNAME/modena-safety-routing.git
+    cd modena-safety-routing
+    '''
+  - (Opzionale ma consigliato) Crea un virtual environment:
+    '''
+    Bash
+    
+    python -m venv venv
+    source venv/bin/activate  # Su Windows: venv\Scripts\activate
+    '''
+  - Installa le dipendenze:
+    '''
+    Bash
+    
+    pip install -r requirements.txt
+    '''
++ 3 Setup dei Dati
 Assicurati di avere i file dati grezzi (GTFS, TIF, GeoJSON).
-
 Posizionali nella cartella data/ rispettando la struttura mostrata sopra. Se i percorsi differiscono, dovrai aggiornarli all'inizio dei Notebook.
