@@ -7,7 +7,7 @@ I sistemi di routing standard basati su GTFS (General Transit Feed Specification
 Questo progetto mira a colmare questo divario, creando uno strumento di supporto alle decisioni che bilanci efficienza e sicurezza.
 
 # 💡 La Soluzione Proposta
-Abbiamo sviluppato un grafo multimodale arricchito che fonde diverse fonti dati:
+Ho sviluppato un grafo multimodale arricchito che fonde diverse fonti dati:
 - Dati GTFS Statici: Orari, fermate, percorsi logici (Agenzia SETA/AMO           Modena).
 - GTFS Shapes: Coordinate GPS dettagliate per ricostruire la geometria           fisica dei percorsi bus.
 - Dati Raster (GeoTIFF): Mappe di probabilità di incidente variabili per         fascia oraria (Mattina, Pomeriggio, Sera, Notte).
@@ -18,8 +18,11 @@ L'algoritmo di routing utilizza una funzione di costo, che crea un sorta di rita
   
 # ⚙️ Metodologia e Architettura
 Il progetto esplora e confronta due approcci implementativi distinti per la modellazione del grafo:
-- 1 Approccio "Full Geometry" (Modellazione Fisica)Descrizione: Ogni singola coordinata GPS del tracciato stradale viene istanziata nel grafo come un nodo fisico (ShapePoint). Il rischio viene mappato su ogni micro-segmento stradale.Pro: Massima precisione spaziale per query granulari (es. "incidenti in questo specifico incrocio").Contro: Esplosione della cardinalità del grafo (milioni di nodi), routing computazionalmente oneroso.
-- 2 Approccio "Semplificato/Edge-Based" (Ottimizzato per Routing)Descrizione: La complessità geometrica viene gestita nella fase di pre-elaborazione (ETL in Python). Un algoritmo di Map Matching calcola la geometria esatta e il rischio medio del segmento tra due fermate e salva queste informazioni come proprietà dell'arco logico (PRECEDES).Pro: Grafo estremamente leggero, routing rapidissimo (millisecondi) su hardware standard, mantenimento dell'informazione geometrica completa sugli archi.
+- 1 Approccio "Full Geometry" (Modellazione Fisica)Descrizione: Ogni singola coordinata GPS del tracciato stradale viene istanziata nel grafo come un nodo fisico (ShapePoint). Il rischio viene mappato su ogni micro-segmento stradale.
+  - Pro: Massima precisione spaziale per query granulari (es. "incidenti in questo specifico incrocio").
+  - Contro: Esplosione della cardinalità del grafo (milioni di nodi), routing computazionalmente oneroso.
+- 2 Approccio "Semplificato/Edge-Based" (Ottimizzato per Routing)Descrizione: La complessità geometrica viene gestita nella fase di pre-elaborazione (ETL in Python). Un algoritmo di Map Matching calcola la geometria esatta e il rischio medio del segmento tra due fermate e salva queste informazioni come proprietà dell'arco logico (PRECEDES).
+  - Pro: Grafo estremamente leggero, routing rapidissimo (millisecondi) su hardware standard, mantenimento dell'informazione geometrica completa sugli archi.
 Nota: Questo è l'approccio raccomandato per il calcolo delle matrici OD tra quartieri.
 # 💻 Stack Tecnologico
 - Core Database: Neo4j Graph Database (Versione 5.x+)
